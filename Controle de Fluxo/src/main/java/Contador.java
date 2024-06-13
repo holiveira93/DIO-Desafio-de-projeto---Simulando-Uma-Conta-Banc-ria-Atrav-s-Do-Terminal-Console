@@ -16,7 +16,7 @@ public class Contador {
 
         }catch (ParametrosInvalidosException exception) {
             //imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro
-            System.err.println("O segundo parâmetro deve ser maior que o primeiro");
+            System.err.println(exception.getMessage());
         }
 
     }
@@ -33,4 +33,8 @@ public class Contador {
 }
 
 class ParametrosInvalidosException extends Exception {
+    @Override
+    public String getMessage() {
+        return "O segundo parâmetro deve ser maior que o primeiro";
+    }
 }
